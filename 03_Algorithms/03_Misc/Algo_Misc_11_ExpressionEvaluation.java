@@ -38,15 +38,18 @@ class Algo_Misc_11_ExpressionEvaluation {
 
     }
 
-    /* Helper function to check priority of operators
+    /* Helper function to check precedence of operators
     stackOperator: operator that is at the top of the operator stack
     expOperator: operator that is currently being examined in the expression
-    Return value: true if the operator in the stack is higher priority than operator
-    being examined in the expression
+    Return value: true if the operator in the stack is equal or greater  
+    precedence than operator being examined in the expression
     */
-    public static boolean isHigherPrecedence(char stackOperator, char expOperator) {
+    public static boolean isEqOrGrtPrecedence(char stackOperator, char expOperator) {
         if ((stackOperator == '*' || stackOperator == '/') && 
             (expOperator == '+' || expOperator == '-'))
+            return true;
+
+        if (stackOperator == expOperator)
             return true;
 
         return false;
@@ -96,11 +99,11 @@ class Algo_Misc_11_ExpressionEvaluation {
                 expr.charAt(i) == '*' || expr.charAt(i) == '/') {
                 /*
                 As long as the operator in the stack is of higher 
-                priority than the operator in the stack, keep processing  
+                precedence than the operator in the expression, keep processing 
                 the two stacks 
                 */
                 while (!operatorStack.empty() 
-                && isHigherPrecedence(operatorStack.peek(), expr.charAt(i))) {
+                && isEqOrGrtPrecedence(operatorStack.peek(), expr.charAt(i))) {
                     compute(numStack, operatorStack);
                 }
                 operatorStack.push(expr.charAt(i));
@@ -133,7 +136,15 @@ class Algo_Misc_11_ExpressionEvaluation {
 
         test("10 + 10 * 40", 410);
 
-        test("(200 - (100 + 50)) * 30 / 10", 150); 
+        test("(200 - (100 + 50)) * 30 / 10", 150);
+
+        test("2 - 6 - 7", -11);
+
+        test("2 + 5 - 1", 6);
+
+        test("5 * 6 + 40", 70);
+
+        test("7 / 10 * 100 + 87", 87); 
 
         System.out.println("Test passed ");
     }

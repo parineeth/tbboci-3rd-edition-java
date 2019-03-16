@@ -23,7 +23,7 @@ class Strings_01_Anagrams {
     Return value: true if the two strings are anagrams, false otherwise
     */
     public static boolean areAnagrams( char[] str1, char[] str2)    {
-        /*Initilize the counts to zero */
+        /*Initialize the counts to zero */
         int[] count1 = new int[NUM_CHARACTERS]; //NUM_CHARACTERS is 256
         int[] count2 = new int[NUM_CHARACTERS];
 

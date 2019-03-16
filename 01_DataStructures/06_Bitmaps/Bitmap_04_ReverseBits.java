@@ -41,7 +41,7 @@ class Bitmap_04_ReverseBits {
             int curByteValue = inputValue & 0xFF;
 
             /*Left shift the result by 8 and append the reverse of the 
-            LS byte of input*/
+            least significant byte of input*/
             result = (result << 8) | reverseTable[curByteValue];
 
             /*Right shift out the least significant byte from the input*/

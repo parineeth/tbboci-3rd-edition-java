@@ -126,7 +126,7 @@ class Algo_Misc_04_Sudoku {
                     solveSudoku(grid, nextRow, nextCol);
                 }
             }
-            /*Once we are done trying all numbers from 1-9 assign the cell
+            /*Once we are done trying all numbers from 1-9, assign the cell
             back to -1 to indicate puzzle writer has not assigned a number 
             to the cell*/
             grid[rowNr][colNr] = -1;

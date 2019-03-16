@@ -39,7 +39,7 @@ class Search_06_InfiniteSearch {
                     low = mid + 1;
             } 
             catch(ArrayIndexOutOfBoundsException e) {
-                /*mid has crossed the boundary of the array.So reduce 
+                /*mid has crossed the boundary of the array. So reduce 
                 the search region to (low, mid - 1)*/
                 high = mid - 1;
             }

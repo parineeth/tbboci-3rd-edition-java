@@ -31,7 +31,7 @@ class Algo_Dyn_01_McsKadane {
         At least 1 element should be present
     mcsStartPos: the starting array index of the MCS is returned here
     mcsEndPos: the ending array index of the MCS is returned here 
-    Return value: Maximum continous sum of the elements 
+    Return value: Maximum continuous sum of the elements 
     */
     public static int kadaneMcs(int[] a, Int mcsStartPos, Int mcsEndPos) {
         int length = a.length;

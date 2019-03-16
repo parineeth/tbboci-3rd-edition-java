@@ -84,7 +84,6 @@ class Algo_Misc_14_AlienDictionary {
 
     /*Main function to find the order of characters in an alien language
     words: the words present in the dictionary
-    numWords: number of words in the dictionary
     */
     public static void getAlphabetOrder(String[] words) {
         /*For each character in the language we maintain a ArrayList*/

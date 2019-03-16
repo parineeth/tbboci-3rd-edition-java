@@ -79,6 +79,7 @@ class Sort_07_KthSmallest {
     /*Finds the kth smallest element in an array
     a: array in which the kth smallest element should be found
     k: value of k (can range from 0 to a.length - 1)
+    Returns: the kth smallest element
     */
     public static int findKthSmallest(int[] a, int k) {
         int left = 0;

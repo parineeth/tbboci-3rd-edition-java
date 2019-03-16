@@ -38,7 +38,7 @@ class Sort_01_WaveSort {
         /*Sort the elements in ascending order*/
         Arrays.sort(a);
 
-        /*Swap the alternate elements*/
+        /*Swap the neighboring elements*/
         for (int i = 1; i < a.length - 1; i += 2) {
             int temp = a[i];
             a[i] = a[i+1];

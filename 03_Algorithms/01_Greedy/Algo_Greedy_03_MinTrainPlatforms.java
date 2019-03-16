@@ -35,7 +35,7 @@ class Algo_Greedy_03_MinTrainPlatforms {
         if (n == 0)
             return 0;
 
-        /*Sort arrival and departure time independantly in non-decreasing order*/
+        /*Sort arrival and departure time independently in non-decreasing order*/
         Arrays.sort(arrival);
         Arrays.sort(departure);
 

@@ -39,7 +39,7 @@ class Algo_Dyn_08_CutRod {
     /*
     price: price[i] gives the price of a rod of length i. price[0] is 0
     totalLength: the total length of the rod given to us. Should be >= 1
-    Return value: the best value that can fetched from the rod
+    Return value: the best value that can be fetched from the rod
     */
     public static int cutRod(int[] price, int totalLength) {
         /*Initialize bestValue to 0*/

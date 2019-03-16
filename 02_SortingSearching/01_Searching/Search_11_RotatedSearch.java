@@ -21,7 +21,7 @@ class Search_11_RotatedSearch {
 
 
     /*
-    a: non-empty array that has been sorted and rotated
+    a: non-empty array that has been sorted and rotated. There should not be any duplicates
     x: element to be searched in the array
     Return value: location of the element in array if found, -1 if not found
     */
@@ -47,7 +47,7 @@ class Search_11_RotatedSearch {
                     start = mid + 1; /*search in region (mid+1, end)*/
             } else {
                 /*
-                The upper portion (mid+1, end) is sorted even after
+                The upper portion (mid, end) is sorted even after
                 rotations. So use this portion for taking decisions
                 */
                 if (a[mid] < x && x <= a[end]) 

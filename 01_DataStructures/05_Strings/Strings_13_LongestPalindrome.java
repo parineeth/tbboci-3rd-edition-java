@@ -41,7 +41,7 @@ class Strings_13_LongestPalindrome {
 
 
             /*Check for even length palindromes. If str1[pos], matches
-            with str1[pos+1], then compare the charcters to the left of
+            with str1[pos+1], then compare the characters to the left of
             pos with the characters to the right of pos+1
             */
             if (pos < str1.length - 1 && str1[pos] == str1[pos + 1])  {

@@ -63,7 +63,7 @@ class Algo_Misc_07_FindIslands {
         isVisited[curRow][curCol] = true;
 
         /*For the current cell, find out if we can continue the island of 1's
-        with its neighbors. Each cell has 9 neighbors. The rows
+        with its neighbors. Each cell has 8 neighbors. The rows
         of neighbors will vary from curRow - 1 to curRow + 1
         The columns of the neighbors will vary from curCol - 1
         to curCol + 1*/

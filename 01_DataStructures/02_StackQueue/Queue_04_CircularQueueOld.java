@@ -6,16 +6,21 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 */
 
-class CircularQueue {
+/*This is an older version of the Circular Queue implementation.
+There is no bug in this implementation. However there is a more simpler
+implementation possible. Please refer to Queue_04_CircularQueue.java
+for the simpler implementation*/
+
+class CircularQueue{
     private int head; /*index of first element in queue. -1 if queue is empty*/
-    private int tail; /*index of free slot just after last element in queue*/
+    private int tail; /*index of last element in queue. -1 if queue is empty*/
     private int count; /*Number of elements currently present in the queue*/
     private int maxSize; /*Max number of elements that can be stored in queue*/
     private Integer buffer[]; /*buffer for storing elements */
 
     CircularQueue() {
-        head = 0;
-        tail = 0;
+        head = -1;
+        tail = -1;
         count = 0;
 
         maxSize = 1;
@@ -38,15 +43,18 @@ class CircularQueue {
 
             buffer = newBuffer;
             head = 0;
-            tail = count;
+            tail = count - 1;
             maxSize = maxSize * 2;
         
         }
 
-        /*Insert the element at the tail of the queue and advance the tail*/
-        buffer[tail] = newElement;
+        /*Advance the tail and insert the element at the tail of the queue*/
         tail = (tail + 1) % maxSize;
-        
+        buffer[tail] = newElement;
+
+        if (count == 0)
+            head = tail;
+
         count++;
     
         /*Return the result code indicating success*/
@@ -60,8 +68,15 @@ class CircularQueue {
 
         Integer removedElement = buffer[head];
 
-        /*Advance the head to the next location*/
-        head = (head + 1) % maxSize; 
+        if (head == tail) {
+            /*There was only 1 item in the queue and that item has 
+            been removed. So reinitialize head and tail to -1*/
+            head = -1;
+            tail = -1;
+        } else {
+            /*Advance the head to the next location*/
+            head = (head + 1) % maxSize; 
+        }
 
         count--;
 
@@ -85,7 +100,7 @@ class CircularQueue {
 
 
 
-class Queue_04_CircularQueue {
+class Queue_04_CircularQueueOld {
 
 
     public static final int MAX_NUM_QUEUE_ELEMS = 10;
